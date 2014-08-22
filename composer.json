@@ -1,6 +1,6 @@
 {
-  "name":        "cubex/skeleton",
-  "description": "Cubex Project Skeleton",
+  "name":        "cubex/application-skeleton",
+  "description": "Cubex Project Application Skeleton",
   "homepage":    "http://cubex.io",
   "license":     "BSD-3-Clause",
   "authors":     [
