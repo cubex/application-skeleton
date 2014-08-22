@@ -1,6 +1,3 @@
-application-skelton
-===================
-
 Skeleton Application
 =======
 Cubex Skeleton Project
