@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Cubex Framework</title>
+</head>
+<?= \Packaged\Dispatch\AssetManager::generateHtmlIncludes('css'); ?>
+<body><?= $this->content(); ?>
+<?= \Packaged\Dispatch\AssetManager::generateHtmlIncludes('js'); ?>
+</body>
+</html>
