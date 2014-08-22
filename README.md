@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 application-skelton
 ===================
 
@@ -71,4 +70,4 @@ Within **public/index.php** before initiating cubex, you can put the environment
 Running the following command within the root of your project will allow you to access this project with http://localhost:8080
 
     php -S 0.0.0.0:8080 public/index.php
->>>>>>> initial commit.
+
