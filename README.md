@@ -1,6 +1,6 @@
 Skeleton Application
 =======
-Cubex Skeleton Project
+Cubex Application Skeleton Project
 ========
 
 [![Latest Stable Version](https://poser.pugx.org/cubex/skeleton/version.png)](https://packagist.org/packages/cubex/skeleton)
@@ -18,7 +18,7 @@ Start by [downloading Composer](http://getcomposer.org/download/) onto your comp
 
 Once composer is installed, to clone the base cubex project, you simply need to run
 
-    composer create-project cubex/skeleton myproject
+    composer create-project cubex/application-skeleton myproject
 replacing **myproject** with the name of the project folder you wish to work with.
 
 ###Getting your web environment setup
