@@ -17,11 +17,10 @@ class WelcomeController extends LayoutController{
   /**
    *
    */
-  public function init()
+  protected function _init()
   {
     $this->am = AssetManager::aliasType('src');
     $this->am->requireCss('css/welcome');
-    parent::init();
   }
 
   /**
