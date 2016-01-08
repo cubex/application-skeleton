@@ -6,13 +6,13 @@ define('PHP_START', microtime(true));
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 //Create an instance of cubex, with the web root defined
-$app = new \Cubex\Cubex(__DIR__);
-$app->boot();
+$cubex = new \Cubex\Cubex(__DIR__);
+$cubex->boot();
 
 //Create and configure a new dispatcher
 $dispatcher = new \Packaged\Dispatch\Dispatch(
-  $app,
-  $app->getConfiguration()->getSection('dispatch')
+  $cubex,
+  $cubex->getConfiguration()->getSection('dispatch')
 );
 
 //Set the correct working directory for dispatcher
@@ -29,8 +29,14 @@ if(file_exists($fileHash))
   }
 }
 
-//Inject dispatch to handle assets
-$app = (new \Stack\Builder())->push([$dispatcher, 'prepare'])->resolve($app);
+$stack = new \Stack\Builder();
+// Uncomment to handle cookies
+//$stack->push('Illuminate\Cookie\Queue', $cubex['cookie']);
+// Inject dispatch to handle assets
+$stack->push([$dispatcher, 'prepare']);
+
+// Resolve the stack
+$app = $stack->resolve($cubex);
 
 //Create a request object
 $request = \Cubex\Http\Request::createFromGlobals();
