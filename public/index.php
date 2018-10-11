@@ -29,23 +29,14 @@ if(file_exists($fileHash))
   }
 }
 
-$stack = new \Stack\Builder();
-// Uncomment to handle cookies
-//$stack->push('Illuminate\Cookie\Queue', $cubex['cookie']);
-// Inject dispatch to handle assets
-$stack->push([$dispatcher, 'prepare']);
-
-// Resolve the stack
-$app = $stack->resolve($cubex);
-
 //Create a request object
 $request = \Cubex\Http\Request::createFromGlobals();
 
 //Tell Cubex to handle the request, and do its magic
-$response = $app->handle($request);
+$response = $dispatcher->handle($request);
 
 //Send the generated response to the user
 $response->send();
 
 //Shutdown Cubex
-$app->terminate($request, $response);
+$cubex->terminate($request, $response);
